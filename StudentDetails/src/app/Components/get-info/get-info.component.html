@@ -1,0 +1,46 @@
+<div class="container">
+  <h1 >Student Details</h1>
+  <form [formGroup]="studentForm" class="form-group col-md-6 mx-auto  p-5 rounded" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" class="form-control" formControlName="name">
+      <div *ngIf="studentForm.get('name').invalid && studentForm.get('name').touched"
+           class="alert alert-danger">
+        <div *ngIf="studentForm.get('name').errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="studentForm.get('name').errors.minlength">
+          Name must be at least 3 characters long.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" class="form-control"
+             formControlName="email">
+      <div *ngIf="studentForm.get('email').invalid && studentForm.get('email').touched"
+           class="alert alert-danger">
+        <div *ngIf="studentForm.get('email').errors.required">
+          Email is required.
+        </div>
+        <div *ngIf="studentForm.get('email').errors.email">
+          Invalid email.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" id="age" class="form-control"
+             formControlName="age">
+      <div *ngIf="studentForm.get('age').invalid && studentForm.get('age').touched"
+           class="alert alert-danger">
+        <div *ngIf="studentForm.get('age').errors.required">
+          Age is required.
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary mt-3" [disabled]="studentForm.invalid">
+      Submit
+    </button>
+  </form>
+</div>
