@@ -8,6 +8,7 @@ import { GetInfoComponent } from './Components/get-info/get-info.component';
 import { NavPageComponent } from './Components/nav-page/nav-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

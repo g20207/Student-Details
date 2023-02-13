@@ -1,3 +1,4 @@
+<head><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.14.0/css/all.css"></head>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -5,6 +6,7 @@
       <th scope="col">Student Name</th>
       <th scope="col">Email</th>
       <th scope="col">Age</th>
+      <th scope="col">Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +15,12 @@
       <td>{{ item.name }}</td>
       <td>{{ item.email }}</td>
       <td>{{ item.age }}</td>
+      <td ><i (click)="getStudentdetails(i+1)" class="fa-solid fa-pen-to-square"></i></td>
     </tr>
+    <!-- <div class="col-md-4">
+      <label>Student Name <b> {{ data.name }} </b></label><br>
+      <label>Roll no <b> {{ data.rollno }} </b></label><br>
+      <label>Email <b> {{ data.email }} </b></label><br>
+    </div> -->
   </tbody>
 </table>

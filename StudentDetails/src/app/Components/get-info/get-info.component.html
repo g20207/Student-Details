@@ -2,12 +2,12 @@
   <h1 >Student Details</h1>
   <form [formGroup]="studentForm" class="form-group col-md-6 mx-auto  p-5 rounded" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="name">Name</label>
+      <label for="name">Name:</label>
       <input id="name" class="form-control" formControlName="name">
       <div *ngIf="studentForm.get('name').invalid && studentForm.get('name').touched"
            class="alert alert-danger">
         <div *ngIf="studentForm.get('name').errors.required">
-          Name is required.
+          Name is required..
         </div>
         <div *ngIf="studentForm.get('name').errors.minlength">
           Name must be at least 3 characters long.
@@ -44,3 +44,7 @@
     </button>
   </form>
 </div>
+
+<!--
+
+ -->

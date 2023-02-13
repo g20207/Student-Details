@@ -18,13 +18,17 @@ export class GetInfoComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
+    var data = JSON.parse(localStorage.getItem("key"));
+    if(data!=null){
+      this.StudentDetails=data;
+        }
+    }
 
   StudentDetails:any = []
   onSubmit() {
       var getForm = this.studentForm.value;
       this.StudentDetails.push(getForm);
-      var  value=JSON.stringify(this.StudentDetails);
+      var value=JSON.stringify(this.StudentDetails);
       localStorage.setItem("key",value);
     }
 
